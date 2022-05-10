@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Image from 'next/Image';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
@@ -43,7 +44,9 @@ export default function Home() {
 			<header className={styles.header}>
 				<span className={styles.topLeft}>Company</span>
 				<span className={styles.topCenter}>
-					<a href='/report/demo'>Show report</a>
+					<Link href='/report/demo'>
+						<a>Show report</a>
+					</Link>
 				</span>
 				<span
 					onClick={!logIn ? (e) => handleLogin(e) : null}
@@ -78,7 +81,8 @@ export default function Home() {
 					<p>
 						If PowerBI were embedded, this pop-up would display a
 						Microsoft Authentication Service. For now, just click Ok
-						and let's pretend you are nicely and securely logged in
+						and let&apos;s pretend you are nicely and securely
+						logged in
 					</p>
 					<button onClick={(e) => handleClick(e)}>Ok</button>
 				</div>

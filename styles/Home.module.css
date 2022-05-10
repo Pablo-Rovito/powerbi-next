@@ -1,116 +1,218 @@
 .container {
-  padding: 0 2rem;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, white 0%, rgb(197, 197, 197) 100%);
+	padding: 0 2rem;
+}
+
+.header {
+	min-height: 10vh;
+	width: 100%;
+	border-bottom: 1px solid rgb(197, 197, 197);
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	padding: 0 2rem;
+}
+
+.topLeft,
+.topCenter,
+.topRight {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 300;
+	font-size: 1.1rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.topRight::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1px;
+	bottom: 0;
+	left: 0;
+	background-color: #aa00cc;
+	transform: scaleX(0);
+	transition: transform 0.2s ease-in-out;
+}
+
+.topLeft::before,
+.topCenter::before {
+	padding: 0.5rem;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1rem;
+	bottom: -33px;
+	left: 0;
+	border: 1px solid #aa00cc;
+	color: #aa00cc;
+	border-radius: 0 5px 5px 5px;
+	background-color: transparent;
+	transform: scaleX(0);
+	transition: transform 0.2s ease-in-out;
+}
+
+.topLeft::before {
+	content: "Insert company's logo here";
+}
+
+.topCenter::before {
+	content: 'This Navbar could have links to different reports, filters, etc...';
+}
+
+.topLeft:hover::before,
+.topCenter:hover::before,
+.topRight:hover::before {
+	transform: scaleX(1);
+}
+
+.topCenter:hover,
+.topRight:hover {
+	cursor: pointer;
+	color: #aa00cc;
+}
+
+.topLeft {
+	justify-content: flex-start;
+}
+
+.topRight {
+	justify-content: flex-end;
+}
+
+.icon {
+	height: 30px;
+	margin: 0 0.5rem;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	position: relative;
+	min-height: 75vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.title {
+	margin: 0;
+	line-height: 1.15;
+	font-size: 4rem;
+	text-align: center;
+}
+
+.logInInactive {
+	opacity: 0;
+	transform: scaleY(0) scaleX(0);
+}
+.logInActive {
+	opacity: 1;
+	transform: scaleY(1) scaleX(1);
+}
+
+.logInActive,
+.logInInactive {
+	position: absolute;
+	z-index: 1;
+	width: 300px;
+	height: 400px;
+	overflow: scroll;
+	border: 1px solid white;
+	border-radius: 10px;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -150px;
+	background-color: rgba(255, 255, 255, 0.8);
+	text-shadow: 0 0 0.5rem white;
+	box-shadow: 0 0 0.3rem 0.1rem rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(2px);
+	display: grid;
+	grid-template-rows: 85% 15%;
+	padding: 1rem;
+	transition: all ease-in-out 0.15s;
+}
+
+.logInActive p,
+.logInInactive p {
+	justify-self: normal;
+	align-self: center;
+	color: black;
+}
+
+.logInActive button,
+.logInInactive button {
+	position: relative;
+	text-transform: uppercase;
+	padding: 0.5rem 2rem;
+	align-self: flex-end;
+	justify-self: flex-end;
+	background-color: transparent;
+	font-weight: 300;
+	color: #565656;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.logInActive button:hover,
+.logInInactive button:hover {
+	color: #aa00cc;
+	font-weight: 600;
+}
+
+.logInActive button::before,
+.logInInactive button::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 2rem;
+	bottom: 0;
+	left: 0;
+	background-color: transparent;
+	border: 2px solid #aa00cc;
+	border-radius: 5px;
+	transform: scaleX(0) translateX(-50%);
+	transition: transform 0.15s ease-in-out;
+}
+
+.logInActive button:hover::before,
+.logInInactive button:hover::before {
+	transform: scaleX(1) translateX(0%);
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+	min-height: 15vh;
+	border-top: 1px solid #eaeaea;
+	display: grid;
+	grid-template-columns: 80% 20%;
+	padding: 0 2rem;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.footer span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	margin: 0 1rem;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.contact {
+	width: auto;
+	display: flex;
+	list-style-type: none;
+	justify-self: flex-start;
 }
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.contact li {
+	margin: 0 1rem;
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+	.grid {
+		width: 100%;
+		flex-direction: column;
+	}
 }

@@ -31,11 +31,11 @@ export default function Demo() {
 				<div>
 					<iframe
 						title='powerbi_example'
-						width='900'
-						height='auto'
+						width='1200'
+						height='450'
 						src='https://app.powerbi.com/reportEmbed?reportId=df153a86-f4e1-4be1-8adc-ffcb0ff47046&autoAuth=true&ctid=ac9904df-e513-42b5-b982-934f4317ab45&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXBhYXMtMS1zY3VzLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9'
 						frameBorder={0}
-						allowFullScreen={false}></iframe>
+						allowFullScreen={true}></iframe>
 				</div>
 			</main>
 			<footer className={styles.footer}>

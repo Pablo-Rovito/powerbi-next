@@ -87,7 +87,7 @@
 
 .icon,
 .activeIcon {
-	border-radius: 50%;
+	border-radius: 5px;
 	height: 30px;
 	margin: 0 0.5rem;
 }

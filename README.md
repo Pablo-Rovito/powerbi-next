@@ -20,5 +20,5 @@ As is the case with custom development, literally ANYTHING could be done for mak
 ![image](https://user-images.githubusercontent.com/91141985/167694564-31aaa3f5-4965-4a18-ab7e-9e9458750630.png)
 ![image](https://user-images.githubusercontent.com/91141985/167694581-5a83a91e-e377-464a-b3b3-d670809af276.png)
 
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jKrNd9vDawg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/></p>
+<p align="center" style={margin:"10px"}>
+  <a href="https://www.youtube.com/embed/jKrNd9vDawg">Video</a></p>

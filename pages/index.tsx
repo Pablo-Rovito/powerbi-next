@@ -53,7 +53,7 @@ export default function Home() {
 					className={styles.topRight}>
 					{!count ? 'Log in...' : userName}
 					<FontAwesomeIcon
-						className={styles.icon}
+						className={!logIn ? styles.activeIcon : styles.icon}
 						icon={faCircleUser}
 					/>
 				</span>
@@ -69,9 +69,8 @@ export default function Home() {
 				</p>
 				<br />
 				<p>
-					It seemed like a good opportunity for giving a potential use
-					as a page for showing PowerBI reports as an in-house,
-					user-friendly dashboard.
+					It could be used as a page for showing PowerBI reports as an
+					in-house, user-friendly dashboard
 				</p>
 
 				<div

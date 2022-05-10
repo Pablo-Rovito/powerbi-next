@@ -21,8 +21,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-weight: 300;
-	font-size: 1.1rem;
+	font-weight: 600;
+	font-size: 1.5rem;
 	transition: all 0.2s ease-in-out;
 }
 
@@ -46,6 +46,7 @@
 	display: block;
 	width: 100%;
 	height: 1rem;
+	font-size: 1rem;
 	bottom: -33px;
 	left: 0;
 	border: 1px solid #aa00cc;
@@ -175,13 +176,13 @@
 	background-color: transparent;
 	border: 2px solid #aa00cc;
 	border-radius: 5px;
-	transform: scaleX(0) translateX(-50%);
+	transform: scaleX(0);
 	transition: transform 0.15s ease-in-out;
 }
 
 .logInActive button:hover::before,
 .logInInactive button:hover::before {
-	transform: scaleX(1) translateX(0%);
+	transform: scaleX(1);
 }
 
 .footer {
@@ -201,13 +202,38 @@
 }
 
 .contact {
-	width: auto;
-	display: flex;
+	height: 80%;
+	width: 100%;
 	list-style-type: none;
-	justify-self: flex-start;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 .contact li {
 	margin: 0 1rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.contact li::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 3px;
+	top: -15px;
+	left: 0;
+	border-radius: 0 0 3px 3px;
+	background-color: #aa00cc;
+	transform: scaleX(0);
+	transition: transform 0.2s ease-in-out;
+}
+
+.contact li:hover::before {
+	transform: scaleX(1);
 }
 
 @media (max-width: 600px) {

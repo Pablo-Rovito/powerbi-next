@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import Image from 'next/Image';
 import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 import { MouseEvent } from 'react';
-import wp_icon from '../assets/WP.svg';
 
 export default function Home() {
 	const [logIn, setLogIn] = useState<boolean>(false);
@@ -43,7 +42,9 @@ export default function Home() {
 			</Head>
 			<header className={styles.header}>
 				<span className={styles.topLeft}>Company</span>
-				<span className={styles.topCenter}>Show report</span>
+				<span className={styles.topCenter}>
+					<a href='/report/demo'>Show report</a>
+				</span>
 				<span
 					onClick={!logIn ? (e) => handleLogin(e) : null}
 					className={styles.topRight}>
@@ -88,23 +89,49 @@ export default function Home() {
 					<ul className={styles.contact}>
 						<li>
 							<a href='https://api.whatsapp.com/send?phone=5492255570472'>
-								a
-								<img src='../assets/WP.svg' alt='' />
+								<Image
+									priority
+									src='/images/WP.svg'
+									className={styles.icon}
+									height={30}
+									width={30}
+									alt=''
+								/>
 							</a>
 						</li>
 						<li>
 							<a href='http://www.linkedin.com/in/pablo-rovito-fullstack-dev'>
-								LinkedIn
+								<Image
+									priority
+									src='/images/LIn.svg'
+									className={styles.icon}
+									height={30}
+									width={30}
+									alt=''
+								/>
 							</a>
 						</li>
 						<li>
-							<a href='https://github.com/Pablo-Rovito'>GitHub</a>
+							<a href='https://github.com/Pablo-Rovito'>
+								<Image
+									priority
+									src='/images/GitHub-Mark-64px.png'
+									className={styles.icon}
+									height={30}
+									width={30}
+									alt=''
+								/>
+							</a>
 						</li>
 						<li>
 							<a href='mailto: pablo.rovito@outlook.com'>
-								<FontAwesomeIcon
+								<Image
+									priority
+									src='/images/gmail.svg'
 									className={styles.icon}
-									icon={faEnvelope}
+									height={30}
+									width={30}
+									alt=''
 								/>
 							</a>
 						</li>

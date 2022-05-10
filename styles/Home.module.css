@@ -93,6 +93,7 @@
 }
 
 .activeIcon {
+	border-radius: 50%;
 	box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
 	color: #aa00cc;
 	background-color: white;

@@ -53,7 +53,11 @@ export default function Home() {
 					className={styles.topRight}>
 					{!count ? 'Log in...' : userName}
 					<FontAwesomeIcon
-						className={!logIn ? styles.activeIcon : styles.icon}
+						className={
+							!logIn && count > 0
+								? styles.activeIcon
+								: styles.icon
+						}
 						icon={faCircleUser}
 					/>
 				</span>
